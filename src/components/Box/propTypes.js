@@ -83,6 +83,7 @@ const propTypes = {
       message: PropTypes.string,
     }),
   ]),
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.elementType]),
   tag: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   wrap: PropTypes.oneOf(["reverse", true, false]),

@@ -1,4 +1,5 @@
-// src/components/Box/Box.stories.jsx
+// Filename: ./src/components/Box/Box.stories.jsx
+import React from "react";
 import { Box } from "./Box";
 
 export default {
@@ -42,7 +43,6 @@ export default {
 const Template = (args) => <Box {...args}>Content</Box>;
 
 export const Default = Template.bind({});
-
 Default.args = {
   a11yTitle: "Accessible Box",
   alignSelf: "center",
@@ -50,4 +50,38 @@ Default.args = {
   background: "lightgrey",
   pad: "medium",
   round: "small",
+};
+
+export const WithSkeleton = Template.bind({});
+WithSkeleton.args = {
+  a11yTitle: "Loading Box",
+  skeleton: true,
+  height: "200px",
+  width: "200px",
+  background: "lightgrey",
+};
+
+export const ClickableBox = Template.bind({});
+ClickableBox.args = {
+  a11yTitle: "Clickable Box",
+  onClick: () => alert("Box clicked!"),
+  background: "lightblue",
+  pad: "medium",
+  round: "small",
+};
+
+export const FlexBox = Template.bind({});
+FlexBox.args = {
+  a11yTitle: "Flex Box",
+  direction: "row",
+  align: "center",
+  justify: "between",
+  pad: "small",
+  background: "lightgreen",
+  children: (
+    <>
+      <div style={{ background: "red", width: "50px", height: "50px" }}></div>
+      <div style={{ background: "blue", width: "50px", height: "50px" }}></div>
+    </>
+  ),
 };
