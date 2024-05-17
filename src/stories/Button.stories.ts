@@ -50,3 +50,10 @@ export const Small: Story = {
     label: 'Button',
   },
 };
+
+export const Inaccessible: Story = {
+  args: {
+    label: 'Button',
+    backgroundColor: "black"
+  },
+};
