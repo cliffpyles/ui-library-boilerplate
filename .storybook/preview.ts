@@ -3,7 +3,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
 
 /* TODO: update import for your custom theme configurations */
-import { lightTheme, darkTheme } from '../src/themes/themes';
+import { themes } from '../src/themes/themes';
 
 /* TODO: replace with your own global styles, or remove */
 const GlobalStyles = createGlobalStyle`
@@ -25,22 +25,20 @@ const preview: Preview = {
     theme: {
       name: "Theme",
       description: "Global theme for components",
-      defaultValue: "light",
+      defaultValue: "branded",
       toolbar: {
         icon: "circlehollow",
         items: [
           { value: "light", title: "Light" },
           { value: "dark", title: "Dark" },
+          { value: "branded", title: "Branded" },
         ],
       },
     },
   },
   decorators: [withThemeFromJSXProvider({
-    themes: {
-      light: lightTheme,
-      dark: darkTheme,
-    },
-    defaultTheme: 'light',
+    themes: themes,
+    defaultTheme: 'branded',
     Provider: ThemeProvider,
     GlobalStyles,
   })],

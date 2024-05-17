@@ -2,34 +2,34 @@
 import { css } from "styled-components";
 
 // Utility functions to handle various prop types
-export const getAlignSelf = (alignSelf) =>
+export const getAlignSelf = ({ alignSelf }) =>
   alignSelf &&
   css`
     align-self: ${alignSelf};
   `;
-export const getGridArea = (gridArea) =>
+export const getGridArea = ({ gridArea }) =>
   gridArea &&
   css`
     grid-area: ${gridArea};
   `;
-export const getMargin = (margin) =>
+export const getMargin = ({ margin }) =>
   margin &&
   css`
     margin: ${typeof margin === "object"
       ? `${margin.top || 0} ${margin.right || 0} ${margin.bottom || 0} ${margin.left || 0}`
       : margin};
   `;
-export const getAlignItems = (align) =>
+export const getAlignItems = ({ align }) =>
   align &&
   css`
     align-items: ${align};
   `;
-export const getAlignContent = (alignContent) =>
+export const getAlignContent = ({ alignContent }) =>
   alignContent &&
   css`
     align-content: ${alignContent};
   `;
-export const getAnimation = (animation) => {
+export const getAnimation = ({ animation }) => {
   if (typeof animation === "string") {
     return css`
       animation: ${animation};
@@ -46,7 +46,7 @@ export const getAnimation = (animation) => {
   }
   return "";
 };
-export const getBackground = (background) => {
+export const getBackground = ({ background }) => {
   if (typeof background === "string") {
     return css`
       background: ${background};
@@ -64,7 +64,7 @@ export const getBackground = (background) => {
   }
   return "";
 };
-export const getBorder = (border) => {
+export const getBorder = ({ border }) => {
   if (typeof border === "string" || typeof border === "boolean") {
     return css`
       border: ${border};
@@ -84,17 +84,17 @@ export const getBorder = (border) => {
   }
   return "";
 };
-export const getDirection = (direction) =>
+export const getDirection = ({ direction }) =>
   direction &&
   css`
     flex-direction: ${direction};
   `;
-export const getElevation = (elevation) =>
+export const getElevation = ({ elevation }) =>
   elevation &&
   css`
     box-shadow: var(--elevation-${elevation});
   `;
-export const getFlex = (flex) => {
+export const getFlex = ({ flex }) => {
   if (typeof flex === "boolean") {
     return css`
       flex: ${flex ? "1 1 auto" : "0 0 auto"};
@@ -112,7 +112,7 @@ export const getFlex = (flex) => {
   }
   return "";
 };
-export const getFill = (fill) => {
+export const getFill = ({ fill }) => {
   if (typeof fill === "boolean") {
     return (
       fill &&
@@ -129,7 +129,7 @@ export const getFill = (fill) => {
   }
   return "";
 };
-export const getGap = (gap) => {
+export const getGap = ({ gap }) => {
   if (typeof gap === "string") {
     return css`
       gap: ${gap};
@@ -142,12 +142,12 @@ export const getGap = (gap) => {
   }
   return "";
 };
-export const getHeight = (height) =>
+export const getHeight = ({ height }) =>
   height &&
   css`
     height: ${typeof height === "object" ? `${height.min} ${height.max}` : height};
   `;
-export const getHoverIndicator = (hoverIndicator) => {
+export const getHoverIndicator = ({ hoverIndicator }) => {
   if (typeof hoverIndicator === "string" || hoverIndicator === true) {
     return css`
       &:hover {
@@ -171,7 +171,7 @@ export const getHoverIndicator = (hoverIndicator) => {
   }
   return "";
 };
-export const getOverflow = (overflow) => {
+export const getOverflow = ({ overflow }) => {
   if (typeof overflow === "string") {
     return css`
       overflow: ${overflow};
@@ -184,7 +184,7 @@ export const getOverflow = (overflow) => {
   }
   return "";
 };
-export const getPad = (pad) => {
+export const getPad = ({ pad }) => {
   if (typeof pad === "string") {
     return css`
       padding: ${pad};
@@ -199,7 +199,7 @@ export const getPad = (pad) => {
   }
   return "";
 };
-export const getRound = (round) => {
+export const getRound = ({ round }) => {
   if (typeof round === "string") {
     return css`
       border-radius: ${round};
@@ -214,12 +214,12 @@ export const getRound = (round) => {
   }
   return "";
 };
-export const getWidth = (width) =>
+export const getWidth = ({ width }) =>
   width &&
   css`
     width: ${typeof width === "object" ? `${width.min} ${width.max}` : width};
   `;
-export const getWrap = (wrap) =>
+export const getWrap = ({ wrap }) =>
   wrap &&
   css`
     flex-wrap: ${wrap === true ? "wrap" : wrap === "reverse" ? "wrap-reverse" : "nowrap"};

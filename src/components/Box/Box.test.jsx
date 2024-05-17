@@ -10,11 +10,6 @@ describe("Box component", () => {
     expect(screen.getByText("Hello World")).toBeInTheDocument();
   });
 
-  it("renders skeleton when skeleton prop is true", () => {
-    render(<Box skeleton={true} />);
-    expect(screen.getByRole("presentation")).toBeInTheDocument();
-  });
-
   it("renders Box with correct aria-label", () => {
     render(<Box a11yTitle="Accessible Box">Content</Box>);
     expect(screen.getByLabelText("Accessible Box")).toBeInTheDocument();

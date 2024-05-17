@@ -23,26 +23,26 @@ import {
   getWrap,
 } from "./utils";
 const StyledBox = styled.div`
-  ${(props) => getAlignSelf(props.alignSelf)}
-  ${(props) => getGridArea(props.gridArea)}
-  ${(props) => getMargin(props.margin)}
-  ${(props) => getAlignItems(props.align)}
-  ${(props) => getAlignContent(props.alignContent)}
-  ${(props) => getAnimation(props.animation)}
-  ${(props) => getBackground(props.background)}
-  ${(props) => getBorder(props.border)}
-  ${(props) => getDirection(props.direction)}
-  ${(props) => getElevation(props.elevation)}
-  ${(props) => getFlex(props.flex)}
-  ${(props) => getFill(props.fill)}
-  ${(props) => getGap(props.gap)}
-  ${(props) => getHeight(props.height)}
-  ${(props) => getHoverIndicator(props.hoverIndicator)}
-  ${(props) => getOverflow(props.overflow)}
-  ${(props) => getPad(props.pad)}
-  ${(props) => getRound(props.round)}
-  ${(props) => getWidth(props.width)}
-  ${(props) => getWrap(props.wrap)}
+  ${(props) => getAlignSelf(props)}
+  ${(props) => getGridArea(props)}
+  ${(props) => getMargin(props)}
+  ${(props) => getAlignItems(props)}
+  ${(props) => getAlignContent(props)}
+  ${(props) => getAnimation(props)}
+  ${(props) => getBackground(props)}
+  ${(props) => getBorder(props)}
+  ${(props) => getDirection(props)}
+  ${(props) => getElevation(props)}
+  ${(props) => getFlex(props)}
+  ${(props) => getFill(props)}
+  ${(props) => getGap(props)}
+  ${(props) => getHeight(props)}
+  ${(props) => getHoverIndicator(props)}
+  ${(props) => getOverflow(props)}
+  ${(props) => getPad(props)}
+  ${(props) => getRound(props)}
+  ${(props) => getWidth(props)}
+  ${(props) => getWrap(props)}
 
   ${(props) =>
     props.focusIndicator &&
