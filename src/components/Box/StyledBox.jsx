@@ -1,138 +1,54 @@
 // Filename: ./src/components/Box/StyledBox.jsx
-
 import styled, { css } from "styled-components";
-
+import {
+  getAlignSelf,
+  getGridArea,
+  getMargin,
+  getAlignItems,
+  getAlignContent,
+  getAnimation,
+  getBackground,
+  getBorder,
+  getDirection,
+  getElevation,
+  getFlex,
+  getFill,
+  getGap,
+  getHeight,
+  getHoverIndicator,
+  getOverflow,
+  getPad,
+  getRound,
+  getWidth,
+  getWrap,
+} from "./utils";
 const StyledBox = styled.div`
-  ${(props) =>
-    props.alignSelf &&
-    css`
-      align-self: ${props.alignSelf};
-    `}
-  ${(props) =>
-    props.gridArea &&
-    css`
-      grid-area: ${props.gridArea};
-    `}
-  ${(props) =>
-    props.margin &&
-    css`
-      margin: ${props.margin};
-    `}
-  ${(props) =>
-    props.align &&
-    css`
-      align-items: ${props.align};
-    `}
-  ${(props) =>
-    props.alignContent &&
-    css`
-      align-content: ${props.alignContent};
-    `}
-  ${(props) =>
-    props.animation &&
-    css`
-      animation: ${props.animation};
-    `}
-  ${(props) =>
-    props.background &&
-    css`
-      background: ${props.background};
-    `}
-  ${(props) =>
-    props.basis &&
-    css`
-      flex-basis: ${props.basis};
-    `}
-  ${(props) =>
-    props.border &&
-    css`
-      border: ${props.border};
-    `}
-  ${(props) =>
-    props.direction &&
-    css`
-      flex-direction: ${props.direction};
-    `}
-  ${(props) =>
-    props.elevation &&
-    css`
-      box-shadow: ${props.elevation};
-    `}
-  ${(props) =>
-    props.flex !== undefined &&
-    css`
-      flex: ${typeof props.flex === "boolean" ? (props.flex ? "1" : "0") : props.flex};
-    `}
-  ${(props) =>
-    props.fill &&
-    css`
-      width: 100%;
-    `}
+  ${(props) => getAlignSelf(props.alignSelf)}
+  ${(props) => getGridArea(props.gridArea)}
+  ${(props) => getMargin(props.margin)}
+  ${(props) => getAlignItems(props.align)}
+  ${(props) => getAlignContent(props.alignContent)}
+  ${(props) => getAnimation(props.animation)}
+  ${(props) => getBackground(props.background)}
+  ${(props) => getBorder(props.border)}
+  ${(props) => getDirection(props.direction)}
+  ${(props) => getElevation(props.elevation)}
+  ${(props) => getFlex(props.flex)}
+  ${(props) => getFill(props.fill)}
+  ${(props) => getGap(props.gap)}
+  ${(props) => getHeight(props.height)}
+  ${(props) => getHoverIndicator(props.hoverIndicator)}
+  ${(props) => getOverflow(props.overflow)}
+  ${(props) => getPad(props.pad)}
+  ${(props) => getRound(props.round)}
+  ${(props) => getWidth(props.width)}
+  ${(props) => getWrap(props.wrap)}
+
   ${(props) =>
     props.focusIndicator &&
     css`
-      outline: 1px solid blue;
-    `}
-  ${(props) =>
-    props.gap &&
-    css`
-      gap: ${props.gap};
-    `}
-  ${(props) =>
-    props.height &&
-    css`
-      height: ${props.height};
-    `}
-  ${(props) =>
-    props.justify &&
-    css`
-      justify-content: ${props.justify};
-    `}
-  ${(props) =>
-    props.overflow &&
-    css`
-      overflow: ${props.overflow};
-    `}
-  ${(props) =>
-    props.pad &&
-    css`
-      padding: ${props.pad};
-    `}
-  ${(props) =>
-    props.round &&
-    css`
-      border-radius: ${props.round};
-    `}
-  ${(props) =>
-    props.width &&
-    !props.fill &&
-    css`
-      width: ${props.width};
-    `}
-  ${(props) =>
-    props.wrap &&
-    css`
-      flex-wrap: ${props.wrap === true ? "wrap" : props.wrap === "reverse" ? "wrap-reverse" : "nowrap"};
-    `}
-
-  ${(props) =>
-    props.hoverIndicator &&
-    css`
-      &:hover {
-        ${(typeof props.hoverIndicator === "string" || props.hoverIndicator === true) &&
-        css`
-          background: ${typeof props.hoverIndicator === "string" ? props.hoverIndicator : "lightgrey"};
-        `}
-        ${typeof props.hoverIndicator === "object" &&
-        props.hoverIndicator.background &&
-        css`
-          background: ${props.hoverIndicator.background};
-        `}
-        ${typeof props.hoverIndicator === "object" &&
-        props.hoverIndicator.elevation &&
-        css`
-          box-shadow: ${props.hoverIndicator.elevation};
-        `}
+      &:focus {
+        outline: 1px solid blue;
       }
     `}
 
