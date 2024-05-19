@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
-import { Box, Button, Grid, Text } from 'grommet';
+import { Box, Button, Grid, Text } from "../..";
 
 export const AppGrid = () => {
   const [sidebar, setSidebar] = useState(true);
 
   return (
-    // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={...}>
     <Grid
       fill
-      rows={['auto', 'flex']}
-      columns={['auto', 'flex']}
+      rows={["auto", "flex"]}
+      columns={["auto", "flex"]}
       areas={[
-        { name: 'header', start: [0, 0], end: [1, 0] },
-        { name: 'sidebar', start: [0, 1], end: [0, 1] },
-        { name: 'main', start: [1, 1], end: [1, 1] },
+        { name: "header", start: [0, 0], end: [1, 0] },
+        { name: "sidebar", start: [0, 1], end: [0, 1] },
+        { name: "main", start: [1, 1], end: [1, 1] },
       ]}
     >
       <Box
@@ -23,7 +21,7 @@ export const AppGrid = () => {
         direction="row"
         align="center"
         justify="between"
-        pad={{ horizontal: 'medium', vertical: 'small' }}
+        pad={{ horizontal: "medium", vertical: "small" }}
         background="dark-2"
       >
         <Button onClick={() => setSidebar(!sidebar)}>
@@ -37,13 +35,13 @@ export const AppGrid = () => {
           background="dark-3"
           width="small"
           animation={[
-            { type: 'fadeIn', duration: 300 },
-            { type: 'slideRight', size: 'xlarge', duration: 150 },
+            { type: "fadeIn", duration: 300 },
+            { type: "slideRight", size: "xlarge", duration: 150 },
           ]}
         >
-          {['First', 'Second', 'Third'].map((name) => (
+          {["First", "Second", "Third"].map((name) => (
             <Button key={name} href="#" hoverIndicator>
-              <Box pad={{ horizontal: 'medium', vertical: 'small' }}>
+              <Box pad={{ horizontal: "medium", vertical: "small" }}>
                 <Text>{name}</Text>
               </Box>
             </Button>
@@ -54,7 +52,6 @@ export const AppGrid = () => {
         <Text>main</Text>
       </Box>
     </Grid>
-    // </Grommet>
   );
 };
 
@@ -62,8 +59,6 @@ AppGrid.args = {
   full: true,
 };
 
-AppGrid.storyName = 'App';
-
 export default {
-  title: 'Layout/Grid/App',
+  title: "Layout/Grid/App",
 };

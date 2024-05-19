@@ -1,14 +1,10 @@
-import React from 'react';
-
-import { Box, Grid } from 'grommet';
+import { Box, Grid } from "../..";
 
 export const NColumnGrid = () => (
-  // Uncomment <Grommet> lines when using outside of storybook
-  // <Grommet theme={...}>
   <Grid
     columns={{
       count: 6,
-      size: 'auto',
+      size: "auto",
     }}
     gap="small"
   >
@@ -19,14 +15,12 @@ export const NColumnGrid = () => (
     <Box background="brand">Item 5</Box>
     <Box background="brand">Item 6</Box>
   </Grid>
-  // </Grommet>
 );
 
-NColumnGrid.storyName = 'N-column layout';
 NColumnGrid.args = {
   full: true,
 };
 
 export default {
-  title: 'Layout/Grid/N-column layout',
+  title: "Layout/Grid/N-column layout",
 };

@@ -1,17 +1,13 @@
-import React from 'react';
-
-import { Box, Grid } from 'grommet';
+import { Box, Grid } from "../..";
 
 export const GridAreasAlternative = () => (
-  // Uncomment <Grommet> lines when using outside of storybook
-  // <Grommet theme={...}>
   <Grid
-    rows={['xxsmall', 'medium', 'xsmall']}
-    columns={['1/4', '3/4']}
+    rows={["xxsmall", "medium", "xsmall"]}
+    columns={["1/4", "3/4"]}
     areas={[
-      ['header', 'header'],
-      ['sidebar', 'main'],
-      ['footer', 'footer'],
+      ["header", "header"],
+      ["sidebar", "main"],
+      ["footer", "footer"],
     ]}
     gap="small"
   >
@@ -31,15 +27,12 @@ export const GridAreasAlternative = () => (
       Footer
     </Box>
   </Grid>
-  // </Grommet>
 );
 
 GridAreasAlternative.args = {
   full: true,
 };
 
-GridAreasAlternative.storyName = 'Areas prop alternatives';
-
 export default {
-  title: 'Layout/Grid/Areas prop alternatives',
+  title: "Layout/Grid/Areas prop alternatives",
 };

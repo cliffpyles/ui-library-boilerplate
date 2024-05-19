@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import { useContext } from "react";
 
-import { Box, Card, Grid, ResponsiveContext, Text } from 'grommet';
+import { Box, Grid, ResponsiveContext, Text } from "../..";
 
 const cards = Array(20)
   .fill()
@@ -10,24 +10,19 @@ const cards = Array(20)
 export const Example = () => {
   const size = useContext(ResponsiveContext);
   return (
-    // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={...}>
     <Box pad="large">
-      <Grid columns={size !== 'small' ? 'small' : '100%'} gap="small">
+      <Grid columns={size !== "small" ? "small" : "100%"} gap="small">
         {cards.map((card, index) => (
           // eslint-disable-next-line react/no-array-index-key
-          <Card pad="large" key={index}>
+          <Box pad="large" key={index} background="white">
             {card}
-          </Card>
+          </Box>
         ))}
       </Grid>
     </Box>
-    // </Grommet>
   );
 };
 
-Example.storyName = 'Responsive cards';
-
 export default {
-  title: 'Layout/Grid/Responsive cards',
+  title: "Layout/Grid/Responsive cards",
 };
